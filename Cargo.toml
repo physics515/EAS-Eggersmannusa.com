@@ -1,0 +1,14 @@
+[package]
+name = "eggersmann_app_server_eggersmannusacom"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+serde = { version = "~1", features = ["derive"] }
+serde_json = "~1"
+image = "~0"
+scraper = "~0"
+rocket = { git = "https://github.com/SergioBenitez/Rocket", rev = "91f6288", features=['json'] }
+reqwest = { version = "~0", features = ["cookies", "blocking", "json", "rustls-tls"] }
