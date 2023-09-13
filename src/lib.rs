@@ -1,8 +1,9 @@
+use std::io::Cursor;
+
 use image::io::Reader as ImageReader;
 use image::ImageOutputFormat;
 use scraper::{Html, Selector};
 use serde_json::json;
-use std::io::Cursor;
 
 pub struct EggersmannUSACom;
 
@@ -197,4 +198,3 @@ impl EggersmannUSACom {
 		}
 	}
 }
-
