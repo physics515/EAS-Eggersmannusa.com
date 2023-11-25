@@ -10,5 +10,5 @@ serde = { version = "*", features = ["derive"] }
 serde_json = "*"
 image = "*"
 scraper = "*"
-rocket = { git = "https://github.com/SergioBenitez/Rocket", rev = "91f6288", features=['json'] }
+rocket = { version = "*", features = ['json'] }
 reqwest = { version = "*", features = ["cookies", "blocking", "json", "rustls-tls"] }
