@@ -1,7 +1,7 @@
 use std::io::Cursor;
 
 use image::io::Reader as ImageReader;
-use image::ImageOutputFormat;
+use image::ImageFormat;
 use scraper::{Html, Selector};
 use serde_json::json;
 
@@ -183,7 +183,7 @@ impl EggersmannUSACom {
 						};
 						let img = img.into_rgba8();
 						let mut buffer = Cursor::new(Vec::new());
-						match img.write_to(&mut buffer, ImageOutputFormat::Jpeg(100)) {
+						match img.write_to(&mut buffer, ImageFormat::Jpeg) {
 							Ok(_) => (),
 							Err(err) => return (rocket::http::ContentType::JSON, json!(format!("error: Error writing to buffer: {src}, Error: {err}")).to_string().into_bytes()),
 						};
