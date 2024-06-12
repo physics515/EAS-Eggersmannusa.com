@@ -41,7 +41,8 @@ impl EggersmannUSACom {
 		let Ok(entry_thumbnail) = Selector::parse("div.entry-thumbnail") else { return (rocket::http::ContentType::JSON, json!(format!("Error parsing entry_thumbnail selector.")).to_string().into_bytes()) };
 		let Ok(a) = Selector::parse("a") else { return (rocket::http::ContentType::JSON, json!(format!("Error parsing a selector.")).to_string().into_bytes()) };
 		let Ok(img) = Selector::parse("img") else { return (rocket::http::ContentType::JSON, json!(format!("Error parsing img selector.")).to_string().into_bytes()) };
-		let Some(body) = document.select(&body).next() else { return (rocket::http::ContentType::JSON, json!(format!("Error getting body")).to_string().into_bytes()) };
+		
+                let Some(body) = document.select(&body).next() else { return (rocket::http::ContentType::JSON, json!(format!("Error getting body")).to_string().into_bytes()) };
 		let Some(site) = body.select(&site).next() else { return (rocket::http::ContentType::JSON, json!(format!("Error getting site")).to_string().into_bytes()) };
 		let Some(site_inner) = site.select(&site_inner).next() else { return (rocket::http::ContentType::JSON, json!(format!("Error getting site_inner")).to_string().into_bytes()) };
 		let Some(site_main) = site_inner.select(&site_main).next() else { return (rocket::http::ContentType::JSON, json!(format!("Error getting site_main")).to_string().into_bytes()) };
