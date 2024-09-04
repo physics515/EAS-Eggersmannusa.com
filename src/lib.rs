@@ -3,7 +3,7 @@
 
 use std::io::Cursor;
 
-use image::io::Reader as ImageReader;
+use image::ImageReader;
 use image::ImageFormat;
 use scraper::{Html, Selector};
 use serde_json::json;
